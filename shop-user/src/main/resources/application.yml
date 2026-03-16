@@ -1,0 +1,24 @@
+server:
+  port: 8071
+spring:
+  application:
+    name: service-user
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hxx?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848 #文件类型
+        namespace: hxx
+  config:
+    import:
+      - nacos:config-client-dev.yml?group=A_GROUP
+    jackson:
+      serialization:
+        fail-on-empty-beans: false
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
