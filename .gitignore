@@ -37,3 +37,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
+# 2026-10-30: IDE 本地配置不入库
+.idea/
